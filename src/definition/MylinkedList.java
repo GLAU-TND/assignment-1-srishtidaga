@@ -11,6 +11,12 @@ public class MylinkedList<E> implements ConcADT<E> {
         size++;
     }
 
+    private void addAfter(E item, Node<E> afternode) {
+        afternode.next = new Node<>(item, afternode.next);
+        size++;
+
+    }
+
     @Override
     public void add(Object item) {
 
