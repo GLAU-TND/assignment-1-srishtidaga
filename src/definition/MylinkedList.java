@@ -6,10 +6,22 @@ public class MylinkedList {
         private Node<E> next;
 
 
+
         private Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
+
+
         }
+
+        public E getData() {
+            return data;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
+
     }
     }
 
