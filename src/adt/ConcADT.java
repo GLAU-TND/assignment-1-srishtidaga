@@ -6,4 +6,5 @@ public interface ConcADT<E> {
     E remove();
 
     E getData(int index);
+
 }
