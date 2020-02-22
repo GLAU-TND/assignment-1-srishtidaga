@@ -6,4 +6,6 @@ public interface MyConcADT {
     void viewContacts();
 
     void deleteContact();
+
+    void searchContact();
 }
