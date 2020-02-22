@@ -17,6 +17,14 @@ public class MylinkedList<E> implements ConcADT<E> {
 
     }
 
+    private Node<E> getNode(int index) {
+        Node<E> response = head;
+        for (int i = 0; i < index; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
+
     @Override
     public void add(Object item) {
 
