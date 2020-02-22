@@ -46,6 +46,7 @@ public class MylinkedList<E> implements ConcADT<E> {
             response = temp.getData();
 
         }
+        return response;
     }
 
     @Override
