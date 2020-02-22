@@ -49,6 +49,16 @@ public class MylinkedList<E> implements ConcADT<E> {
         return response;
     }
 
+    private E removeAfter(Node<E> afternode) {
+        Node<E> temp = afternode.getNext();
+        if (temp != null) {
+            afternode.next = temp.getNext();
+            size--;
+        }
+        E response = temp.getData();
+        return response;
+    }
+
     @Override
     public void add(Object item) {
 
