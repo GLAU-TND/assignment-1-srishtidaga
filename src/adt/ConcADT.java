@@ -1,4 +1,4 @@
 package adt;
 
-public interface ConcADT {
+public interface ConcADT<E> {
 }
