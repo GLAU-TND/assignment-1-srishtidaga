@@ -25,7 +25,31 @@ public class Person {
         return email;
     }
 
-    public MylinkedList<String> getContactNumbers() {
-        return contactNumbers;
+    public String getContactNumbers() {
+        StringBuilder contacts = new StringBuilder();
+        boolean a = false;
+        for (int i = 0; i < contactNumbers.size; i++) {
+            if (i == 0) {
+                contacts.append(contactNumbers.getData(i));
+            } else {
+                contacts.append(",").append(contactNumbers.getData(i));
+            }
+        }
+        if (contactNumbers.size == 0) {
+            contacts.append("null");
+        } else if (contactNumbers.size == 1) {
+            a = true;
+        }
+        return a ? "contact " + contacts : "contacts" + contacts;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "firstName: " + getFirstName() + "\n" + "lastName: " + getLastName() + "\n" + getContactNumbers() + "\n" + "Email: " + getEmail() + "\n" + "--------*--------*--------*--------\n" +
+                "-------*--------*--------*--------\n";
+
     }
 }
+
