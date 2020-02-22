@@ -12,4 +12,20 @@ public class Person {
         this.email = email;
         this.contactNumbers = contactNumbers;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public MylinkedList<String> getContactNumbers() {
+        return contactNumbers;
+    }
 }
