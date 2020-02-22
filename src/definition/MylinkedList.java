@@ -4,7 +4,7 @@ import adt.ConcADT;
 
 public class MylinkedList<E> implements ConcADT<E> {
     private Node head = null;
-    private int size = 0;
+    public int size = 0;
 
     private void addFirst(E item) {
         head = new Node<>(item, head);
@@ -85,7 +85,7 @@ public class MylinkedList<E> implements ConcADT<E> {
 
     @Override
     public E getData(int index) {
-        return null;
+        return getNode(index).getData();
     }
 
     private static class Node<E> {
