@@ -80,7 +80,7 @@ public class MylinkedList<E> implements ConcADT<E> {
 
     @Override
     public E remove() {
-        return null;
+        return remove(size - 1);
     }
 
     @Override
