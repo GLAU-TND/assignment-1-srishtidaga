@@ -1,4 +1,6 @@
 package definition;
 
-public class MyContact {
+import adt.MyConcADT;
+
+public class MyContact implements MyConcADT {
 }
