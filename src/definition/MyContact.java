@@ -193,6 +193,23 @@ public class MyContact implements MyConcADT {
 
     @Override
     public void searchContact() {
+        int size = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("You could search for a contact from their first names:");
+        String name = sc.next();
+        name = name.trim();
+        MylinkedList<Integer> lists = matchFirst(name);
+        boolean a = false;
+        size = lists.size;
+        if (size > 1) {
+            a = true;
+        }
+
+        System.out.println(a ? size + " Matches found!" : size + " Match found!");
+        for (int i = 0; i < size; i++) {
+            int index = lists.getData(i);
+            System.out.println(MyContactsBook.getData(index));
+        }
 
     }
 }
