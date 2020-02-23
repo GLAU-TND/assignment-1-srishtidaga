@@ -170,8 +170,6 @@ public class MyContact implements MyConcADT {
         } catch (InputMismatchException E) {
             System.out.println("Integer input expected ");
         }
-
-
     }
 
     @Override
