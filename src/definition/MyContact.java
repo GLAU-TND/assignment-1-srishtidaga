@@ -3,6 +3,7 @@ package definition;
 import adt.MyConcADT;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class MyContact implements MyConcADT {
     Scanner sc = new Scanner(System.in);
@@ -15,9 +16,49 @@ public class MyContact implements MyConcADT {
     }
 
     private String getLastName() {
-        System.out.println("LastName: ");
+        System.out.print("LastName: ");
         String lastName = sc.next();
         return lastName;
+    }
+
+    private MylinkedList<String> GetContactNumbers() {
+        MylinkedList<String> contactNumbers = new MylinkedList<>();
+        System.out.print("ContactNumbers: ");
+        String contactno = sc.next();
+        while (true) {
+            if (Pattern.matches("[0-9]+ ", contactno)) {
+                contactNumbers.add(contactno);
+                break;
+            } else {
+
+                System.out.println("Invalid PhoneNumber");
+                break;
+            }
+        }
+        while (true) {
+            System.out.println("Do you want to add a new ContactNumber? (y/n) : ");
+            String a = sc.next();
+            char at = a.charAt(0);
+            if (a.length() > 1) {
+                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase for NO)");
+                continue;
+            }
+            if (at == 'y') {
+                System.out.println("ContactNumber: ");
+                contactno = sc.next();
+                if (Pattern.matches("[0-9] +", contactno)) {
+                    contactNumbers.add(contactno);
+                } else {
+                    System.out.println("Invalid PhoneNumber");
+                }
+            } else if (at == 'n') {
+                break;
+            } else {
+                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase for NO)");
+            }
+        }
+        return contactNumbers;
+
     }
 
     @Override
