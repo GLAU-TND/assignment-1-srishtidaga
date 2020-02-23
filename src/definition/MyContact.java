@@ -2,6 +2,7 @@ package definition;
 
 import adt.MyConcADT;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -143,8 +144,33 @@ public class MyContact implements MyConcADT {
 
     }
 
+    private void printNames() {
+        System.out.println("Here are your all contacts:");
+        for (int i = 0; i < MyContactsBook.size; i++) {
+            Person temp = MyContactsBook.getData(i);
+            System.out.println((i + 1) + "." + temp.getFirstName() + " " + temp.getLastName());
+        }
+    }
+
     @Override
     public void deleteContact() {
+        Scanner sc = new Scanner(System.in);
+        printNames();
+        System.out.print("Press the number against the contact to delete it: ");
+        try {
+            int index = sc.nextInt();
+            if (index > MyContactsBook.size || index == 0) {
+                System.out.println("Invaild Input");
+            } else {
+                Person p = MyContactsBook.getData(index - 1);
+                String name = p.getFirstName() + p.getLastName();
+                MyContactsBook.remove(index - 1);
+                System.out.println(name + "'s Contact has been removed Successfully");
+            }
+        } catch (InputMismatchException E) {
+            System.out.println("Integer input expected ");
+        }
+
 
     }
 
