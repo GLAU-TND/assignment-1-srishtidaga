@@ -172,6 +172,25 @@ public class MyContact implements MyConcADT {
         }
     }
 
+    private MylinkedList<Integer> matchFirst(String Firstname) {
+        MylinkedList<Integer> indexes = new MylinkedList<>();
+        if (MyContactsBook.size == 0) {
+        } else {
+            for (int i = 0; i < MyContactsBook.size; i++) {
+                Person temp = MyContactsBook.getData(i);
+                String name = temp.getFirstName();
+                name = name.toLowerCase();
+                Firstname = Firstname.toLowerCase();
+
+                if (name.compareTo(Firstname) == 0) {
+                    indexes.add(i);
+                }
+
+            }
+        }
+        return indexes;
+    }
+
     @Override
     public void searchContact() {
 
