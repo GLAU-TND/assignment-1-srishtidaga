@@ -10,8 +10,14 @@ public class MyContact implements MyConcADT {
     private String getFirstName() {
         System.out.println("Please Enter the name of the Person");
         System.out.print("FirstName: ");
-        String FirstName = sc.next();
-        return FirstName;
+        String firstName = sc.next();
+        return firstName;
+    }
+
+    private String getLastName() {
+        System.out.println("LastName: ");
+        String lastName = sc.next();
+        return lastName;
     }
 
     @Override
