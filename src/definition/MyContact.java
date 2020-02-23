@@ -129,6 +129,17 @@ public class MyContact implements MyConcADT {
 
     @Override
     public void viewContacts() {
+        System.out.println("---Here are all your contacts---\n" +
+                "-------- * -------- * -------- * --------");
+
+        for (int i = 0; i < MyContactsBook.size; i++) {
+            Person response = MyContactsBook.getData(i);
+            System.out.println(response);
+        }
+        System.out.println("Total Contacts: " + MyContactsBook.size);
+
+
+
 
     }
 
