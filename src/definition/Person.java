@@ -48,7 +48,7 @@ public class Person {
     @Override
     public String toString() {
         return "firstName: " + getFirstName() + "\n" + "lastName: " + getLastName() + "\n" + getContactNumbers() + "\n" + "Email: " + getEmail() + "\n" + "--------*--------*--------*--------\n" +
-                "-------*--------*--------*--------\n";
+                "--------*--------*--------*--------\n";
 
     }
 }
