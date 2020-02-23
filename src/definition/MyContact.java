@@ -25,16 +25,15 @@ public class MyContact implements MyConcADT {
     }
 
     private MylinkedList<String> GetContactNumbers() {
-        MylinkedList<String> contactNumbers = new MylinkedList<>();
-        System.out.print("ContactNumbers: ");
+        MylinkedList<String> contactNumbers = new MylinkedList<String>();
+        System.out.print("ContactNumber: ");
         String contactno = sc.next();
         while (true) {
-            if (Pattern.matches("[0-9]+ ", contactno)) {
+            if (Pattern.matches("[0-9]+", contactno)) {
                 contactNumbers.add(contactno);
                 break;
             } else {
-
-                System.out.println("Invalid PhoneNumber");
+                System.out.println("Invaild PhoneNumber");
                 break;
             }
         }
@@ -43,21 +42,22 @@ public class MyContact implements MyConcADT {
             String a = sc.next();
             char at = a.charAt(0);
             if (a.length() > 1) {
-                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase for NO)");
+                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase) for NO)");
                 continue;
             }
             if (at == 'y') {
-                System.out.println("ContactNumber: ");
+                System.out.print("ContactNumber: ");
                 contactno = sc.next();
-                if (Pattern.matches("[0-9] +", contactno)) {
+                if (Pattern.matches("[0-9]+", contactno)) {
+
                     contactNumbers.add(contactno);
                 } else {
-                    System.out.println("Invalid PhoneNumber");
+                    System.out.println("Invaild PhoneNumber");
                 }
             } else if (at == 'n') {
                 break;
             } else {
-                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase for NO)");
+                System.out.println("Please Enter a Valid Input i.e.,y(lowerCase) for Yes or n(lowerCase) for NO)");
             }
         }
         return contactNumbers;
@@ -115,7 +115,7 @@ public class MyContact implements MyConcADT {
     public void addContact() {
         System.out.println("You have to chosen to add a new contact: ");
         String firstName = getFirstName();
-        String lastName = getFirstName();
+        String lastName = getLastName();
         contactNumbers = GetContactNumbers();
         String Email = GetEmail();
         Person newContact;

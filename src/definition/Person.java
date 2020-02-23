@@ -31,19 +31,18 @@ public class Person {
         for (int i = 0; i < contactNumbers.size; i++) {
             if (i == 0) {
                 contacts.append(contactNumbers.getData(i));
-            } else {
+            } else
                 contacts.append(",").append(contactNumbers.getData(i));
-            }
         }
         if (contactNumbers.size == 0) {
             contacts.append("null");
         } else if (contactNumbers.size == 1) {
             a = true;
         }
-        return a ? "contact " + contacts : "contacts" + contacts;
 
-
+        return a ? "Contact: " + contacts : "Contacts:" + contacts;
     }
+
 
     @Override
     public String toString() {
